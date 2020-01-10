@@ -1,15 +1,39 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
+const MostVotes = ({votes,anecdotes}) => {
+  let keys= Object.keys(votes);
+  let maxValue = 0;
+  let maxValueIndex;
+  
+  keys.forEach((key)=>{
+      if(votes[key]>maxValue){
+        maxValue=votes[key]
+        maxValueIndex=key}
+  });
+    
+   
+    //maxValueIndex is the index value of the maximum no. of votes
+
+  return(
+    <div>
+      <h2>Anecdotes with most votes</h2>
+     {(maxValue>0) && <p>{anecdotes[maxValueIndex]}</p>}
+    </div>
+  )
+}
+
+
+
 const App = (props) => {
     
     //Select a random value as a Hook called selected which is an index of array that is currently generated randomly
-  let randomValue = Math.floor(Math.random() * (props.anecdotes.length))
+  const [selected, setSelected] = useState(Math.floor(Math.random() * (props.anecdotes.length)))
   
     //Change the random number of index currently selected
-    const changeRandomValue = ()=>(randomValue = (Math.floor(Math.random() * (props.anecdotes.length))))
+  const changeRandomValue = ()=>setSelected(Math.floor(Math.random() * (props.anecdotes.length)));
   
-// Initialize an empty object that will latrer store votes
+    // Initialize an empty object that will latrer store votes
   let votesObj={};
 
     //create votesObj that corresponding to all elements of the array passed
@@ -23,21 +47,23 @@ const App = (props) => {
   const changeVote = ()  => {
       const newVotes = {
           ...votes,
-          [randomValue]: votes[randomValue]+1
+          [selected]: votes[selected]+1
       }
-    //console.log(selected);
+  
     addVotes(newVotes);
-    
+  }
 
-    }
+    
 
 
   return (
     <div>
-      {props.anecdotes[randomValue]}<br />
-      <p> has {votes[randomValue]} votes</p>
+      <h2>Anecdote of the day</h2>
+      {props.anecdotes[selected]}<br />
+      <p> has {votes[selected]} votes</p>
       <button onClick={changeRandomValue} >next anecdote</button>
       <button onClick={changeVote} >vote</button>
+      <MostVotes votes={votes} anecdotes={props.anecdotes} />
     </div>
   )
 }
