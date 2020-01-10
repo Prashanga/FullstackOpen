@@ -12,16 +12,35 @@ const Button =({handleClick}) =>{
   ); 
 }
 
-const Statistics = ({good,neutral,bad,total}) => (
-    <div>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {good+neutral+bad}</p>
-      <p>average {total===0?0:(good-bad)/total}</p>
-      <p>positive {total===0?0:good/total*100}</p>
-    </div>
+const Statistics = ({good,neutral,bad,total}) => {
+  let average = +((good-bad)/total).toFixed(2);
+  let positive = +(good/total*100).toFixed(2);
+  
+  return(
+    <table>
+      <tbody>
+        <tr>
+        <td>good</td><td>{good}</td>
+        </tr>
+        <tr>
+        <td>neutral</td><td>{neutral}</td>
+        </tr>
+        <tr>
+        <td>bad</td><td>{bad}</td>
+        </tr>
+        <tr>
+        <td>all</td><td>{good+neutral+bad}</td>
+        </tr>
+        <tr>
+        <td>average</td><td>{total===0?0:average}</td>
+        </tr>
+        <tr>
+        <td>positive</td><td>{total===0?0:positive}</td>
+        </tr>
+      </tbody>
+    </table>
   );
+}
 
 
 
@@ -62,7 +81,7 @@ const App = () => {
     {total > 0 &&
       <Statistics good={good} bad={bad} neutral={neutral} total={total} />}
     {total===0 &&
-    
+
     <p>No feedback given</p>}
      </div>
   )
