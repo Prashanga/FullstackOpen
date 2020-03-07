@@ -1,6 +1,6 @@
 
   
-# FullstackOpen
+# Exercises from fullstackOpen.com
 
 New repository for updated course from FullStackOpen. Only includes Part 1 and 2. The repository is for assignment exercises and not the tutorial exercises
 
