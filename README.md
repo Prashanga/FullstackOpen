@@ -11,7 +11,7 @@ Part 1 creates a front-end app using React. This is an intorduction to React and
 
    ![ScreenShot 1](https://github.com/Prashanga/Images-For-Web/blob/master/1.1.png)
    
-
+------------------------------------------------------------------------------------------------------------------------------
  
    ![ScreenShot 1](https://github.com/Prashanga/Images-For-Web/blob/master/1.2.png)
     
@@ -23,13 +23,13 @@ Part 1 creates a front-end app using React. This is an intorduction to React and
   The exercises demand to build a country search app that returns API data from https://restcountries.eu. Realtime weather information is obtained from openweathermap.org Api.
  
   
-   ![ScreenShot 3](https://github.com/Prashanga/Images-For-Web/blob/master/2.1.png)
+  ![ScreenShot 3](https://github.com/Prashanga/Images-For-Web/blob/master/2.1.png)
+   
+  -----
+ 
+  ![ScreenShot 4](https://github.com/Prashanga/Images-For-Web/blob/master/2.2.png)
    
 
- 
-   ![ScreenShot 4](https://github.com/Prashanga/Images-For-Web/blob/master/2.2.png)
-   
-   
    
    ![ScreenShot 5](https://github.com/Prashanga/Images-For-Web/blob/master/2.3.png)
   
